@@ -39,6 +39,17 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         loadPosts()
     }
     
+    @IBAction func logout(_ sender: Any) {
+        PFUser.logOut()
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+        
+        let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+        
+        sceneDelegate.window?.rootViewController = loginViewController
+    }
+    
     @objc private func loadPosts() {
         refreshCount = 0
         
