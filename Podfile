@@ -8,5 +8,6 @@ target 'Swiftagram' do
   # Pods for Swiftagram
   pod "Parse"
   pod "AlamofireImage"
+  pod "MessageInputBar"
 
 end
